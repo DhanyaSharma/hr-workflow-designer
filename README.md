@@ -1,73 +1,82 @@
-# React + TypeScript + Vite
+# HR Workflow Designer  
+A React + ReactFlow based visual workflow builder with custom nodes, JSON editing, and workflow simulation.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project allows HR teams to design automated workflows using a drag-and-drop UI, including custom node types such as **Start**, **Task**, **Approval**, **Automated**, and **End** nodes.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+### 🧱 **1. Visual Workflow Canvas**
+- Drag and drop nodes
+- Connect nodes using smooth edges
+- Custom colored node components
+- Pan / zoom / fit view controls
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🗂️ **2. Custom Node Types**
+- Start Node  
+- Task Node  
+- Approval Node  
+- Automated Node (with automation dropdown)  
+- End Node  
 
-## Expanding the ESLint configuration
+Each node has editable metadata.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### ✏️ **3. Node Editor Panel**
+- Edit node title
+- Edit metadata (JSON)
+- Monaco-based JSON editor (auto fallback to textarea)
+- Live JSON validation
+- Persist edits to workflow
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 📦 **4. Export & Import Workflow**
+- Export workflow as `workflow.json`
+- Import workflow back into the canvas
+- Useful for interviews and demos
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 🗑️ **5. Delete Node**
+- Select a node → press Delete / Backspace
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+### 🧪 **6. Workflow Simulator Panel**
+- Shows node structure
+- Validates connections
+- Simulates basic execution flow
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|------|------------|
+| UI Framework | React 18 |
+| Canvas Engine | ReactFlow |
+| Editor | Monaco Editor |
+| State | Custom React Hooks |
+| Mock API | MSW |
+| Build Tool | Vite |
+| Language | TypeScript |
+
+---
+
+## 📁 Folder Structure
+src/
+├── api/
+├── components/
+│ ├── Canvas/
+│ ├── Editor/
+│ ├── Sidebar/
+│ └── nodes/
+├── hooks/
+├── styles/
+└── App.tsx
+
+
+
+

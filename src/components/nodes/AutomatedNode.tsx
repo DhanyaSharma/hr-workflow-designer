@@ -1,0 +1,40 @@
+import type { NodeProps } from "reactflow";
+import { Handle, Position } from "reactflow";
+
+export default function AutomatedNode({ data, selected }: NodeProps) {
+  const status = data?._status;
+
+  const border =
+    status === "running"
+      ? "3px solid #f59e0b"
+      : status === "success"
+      ? "3px solid #10b981"
+      : status === "failed"
+      ? "3px solid #ef4444"
+      : selected
+      ? "3px solid #2563eb"
+      : "2px solid #7c3aed";
+
+  return (
+    <div
+      style={{
+        padding: "12px 18px",
+        borderRadius: "8px",
+        border,
+        background: "#ede9fe",
+        color: "#5b21b6",
+        fontWeight: "bold",
+        textAlign: "center",
+      }}
+    >
+      {data.title || "Automated Node"}
+
+      <Handle type="target" position={Position.Top}
+        style={{ background: "#7c3aed", width: 10, height: 10, borderRadius: "50%" }}
+      />
+      <Handle type="source" position={Position.Bottom}
+        style={{ background: "#7c3aed", width: 10, height: 10, borderRadius: "50%" }}
+      />
+    </div>
+  );
+}

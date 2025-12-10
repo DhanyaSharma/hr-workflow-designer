@@ -63,37 +63,7 @@ Each node has editable metadata.
 | Build Tool | Vite |
 | Language | TypeScript |
 
----
 
-## 📁 Folder Structure
-src/
-├── api/
-│   ├── client.ts
-│   └── mocks/
-│       ├── browser.ts
-│       └── handlers.ts
-│
-├── components/
-│   ├── Canvas/
-│   │   └── WorkflowCanvas.tsx
-│   ├── Editor/
-│   │   └── NodeFormPanel.tsx
-│   ├── Sidebar/
-│   │   └── NodePalette.tsx
-│   └── nodes/
-│       ├── StartNode.tsx
-│       ├── TaskNode.tsx
-│       ├── ApprovalNode.tsx
-│       ├── AutomatedNode.tsx
-│       └── EndNode.tsx
-│
-├── hooks/
-│   └── useWorkflow.ts
-│
-├── styles/
-│   └── index.css
-│
-└── App.tsx
 
 
 

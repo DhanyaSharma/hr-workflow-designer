@@ -1,6 +1,6 @@
 // src/services/simulationService.ts
 import type { Node, Edge } from 'reactflow';
-import { getAutomations } from '../api/client'; // uses your client helper
+import { getAutomations } from '../api/client'; 
 
 export type LogEntry = {
   time: string;
@@ -76,9 +76,6 @@ export async function executeWorkflow(
         }
       }
     });
-
-  // BFS/DFS traversal: we'll do sequential traversal from a start node following first outgoing edge
-  // For more complex graphs, you can implement branching/conditions; for now we'll traverse breadth-first paths.
   const visited = new Set<string>();
 
   async function processNode(node: Node): Promise<boolean> {

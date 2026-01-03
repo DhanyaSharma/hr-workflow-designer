@@ -24,16 +24,6 @@ export class SimulationController {
     return this.aborted;
   }
 }
-
-/**
- * Execute the workflow.
- * - nodes: React Flow nodes
- * - edges: React Flow edges
- * - onLog: callback when a log entry is produced
- * - updateNodeStatus: optional function to mark node status in UI
- * - controller: optional SimulationController to allow cancel
- * - delayMs: per-node delay to simulate processing
- */
 export async function executeWorkflow(
   nodes: Node[],
   edges: Edge[],

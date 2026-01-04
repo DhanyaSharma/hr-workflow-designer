@@ -3,7 +3,6 @@ A React + ReactFlow based visual workflow builder with custom nodes, JSON editin
 
 This project allows HR teams to design automated workflows using a drag-and-drop UI, including custom node types such as **Start**, **Task**, **Approval**, **Automated**, and **End** nodes.
 
-
 ## 🚀 Features
 
 ### 🧱 **1. Visual Workflow Canvas**
